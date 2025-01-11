@@ -10,7 +10,7 @@ function calculateWeight(bmiTarget, height) {
     return  (bmiTarget * (height * height)).toFixed(2);
 }
 
-if(BMI < 18.5) {
+if (BMI < 18.5) {
     let weightSuggest = calculateWeight(18.5, height);
     console.log(`You should gain at least ${(weightSuggest - weight).toFixed(2)} kg`);
 } else if (BMI <= 24.9) {
