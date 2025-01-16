@@ -16,3 +16,24 @@ for (let i = 0; i < intArr.length; i++) {
 }
 
 console.log(intArr);
+
+
+// Bài sửa: dùng bubble sort
+
+unsortedPosition = array.lenght - 1;
+
+for (; unsortedPosition > 0; unsortedPosition--) {
+    for (let index = 0; index < unsortedPosition; index++) {
+        const leftValue = array[index];
+        const rightValue = array[index + 1];
+        if (leftValue > rightValue) {
+            swap(array, index);
+        }
+    }
+}
+
+function swap(array, index) {
+    let temp = array[index];
+    array[index] = array[index + 1];
+    array[index + 1] = temp;
+}

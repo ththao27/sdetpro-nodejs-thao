@@ -35,3 +35,32 @@ while (j < arr2.length) {
     j++;
 }
 console.log(mergedArr);
+
+
+// bài sửa
+let foo = [1, 12, 16, 28, 34];
+let bar = [1, 13, 16, 27, 99];
+
+let merged = [];
+
+while (fooArrayStillHaveElement && barArrayStillHaveElement) {
+    const fooValue = foo[fooPosition];
+    const barValue = bar[barPosition];
+    if (fooValue <= barValue) {
+        merged.push(fooValue);
+        fooPosition++;
+    } else {
+        merged.push(barValue);
+        barPosition++;
+    }
+}
+
+while (fooArrayStillHaveElement) {
+    merged.push(foo[fooPosition]);
+    fooPosition++;
+}
+
+while (barArrayStillHaveElement) {
+    merged.push(bar[barPosition]);
+    barPosition++;
+}
