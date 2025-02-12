@@ -29,7 +29,6 @@ const MESSAGES = {
     ENTER_CHOICE: "Please enter your choice: "
 };
 
-let bankAccounts = [];
 let bankAccount1 = {
     accountNumber: "123456",
     accountName: "Teo",
@@ -39,39 +38,53 @@ let bankAccount1 = {
 let bankAccount2 = JSON.parse(JSON.stringify(bankAccount1));
 bankAccount2.accountNumber = "6543421";
 bankAccount2.accountName = "Ti";
-bankAccounts.push(bankAccount1, bankAccount2);
 
-// Usage
-displayMenu();
-let userChoice = getUserChoice();
-do {
-    switch (userChoice) {
-        case 0:
-            console.log("Goodbye!");
-            break;
-        case 1:
-            let accountNumberInput = getAccountNumber();
-            let matchingAccount = findAccount(accountNumberInput);
-            if (matchingAccount) {
-                console.log(`Account name: ${matchingAccount.accountName}, Balance: ${matchingAccount.balance}`);
-            }
-            break;
-        case 2:
-            let accountNumberForWithdrawal = findAccount(getAccountNumber());
-            if (accountNumberForWithdrawal) {
-                let withdrawAmount = Number(readline.question(MESSAGES.ENTER_WITHDRAW_AMOUNT));
-                withdrawFromAccount(withdrawAmount, accountNumberForWithdrawal);
-            }
-            break;
-        default:
-            console.log("Invalid number, please try again");
+const bankAccounts = [bankAccount1, bankAccount2];
+
+// Program Interface
+bankApp();
+
+// Main app
+
+function bankApp() {
+    let isInteracting = true;
+
+    while (isInteracting) {
+        printMenuApp();
+        const userChoice = getUserChoice();
+        
+        switch (userChoice) {
+            case 0:
+                isInteracting = false
+                break;
+            case 1:
+                let accountNumberInput = getAccountNumber();
+                let foundAccount = findAccount(accountNumberInput);
+                if (foundAccount.accountNumber) {
+                    const { accountName, balance } = foundAccount; // Destructure
+                    console.log(`Account name: ${accountName}, Balance: ${balance}`);
+                } else {
+                    console.log("Account not found");
+                }
+                break;
+            case 2:
+                let accountNumberForWithdrawal = findAccount(getAccountNumber());
+                if (accountNumberForWithdrawal) {
+                    let withdrawAmount = Number(readline.question(MESSAGES.ENTER_WITHDRAW_AMOUNT));
+                    withdrawFromAccount(withdrawAmount, accountNumberForWithdrawal);
+                }
+                break;
+            default:
+                console.log("Invalid number, please try again");
+        }
     }
-    displayMenu();
-    userChoice = getUserChoice();
-} while (userChoice !== 0)
 
-// Controller
-function displayMenu() {
+    console.log("Goodbye! See you next time!");
+}
+
+// Support functions
+
+function printMenuApp() {
     console.log(`
 === Banking application ===
     1. Find an account
@@ -88,14 +101,15 @@ function getAccountNumber() {
     return readline.question(MESSAGES.ENTER_ACCOUNT_NUMBER);
 }
 
-function findAccount(accountNumber) { 
-    for (let i = 0; i < bankAccounts.length; i++) {
-        if (bankAccounts[i].accountNumber == accountNumber) {
-            return bankAccounts[i];
+function findAccount(inputAccountNumber) {
+    let foundAccount = {};
+    for (account of bankAccounts) {
+        if (account.accountNumber === inputAccountNumber) {
+            foundAccount = account;
+            break; // chỗ này nên break
         }
     }
-    console.log("Account not found");
-    return null
+    return foundAccount // ném account ra đây
 }
 
 function withdrawFromAccount(withdrawAmount, userAccount) {
@@ -122,3 +136,4 @@ function isValidWithdrawal(withdrawAmount, userAccount) {
     else 
         return true; 
 }
+
