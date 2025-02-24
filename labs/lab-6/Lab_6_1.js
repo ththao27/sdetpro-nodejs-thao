@@ -109,7 +109,6 @@ function getResponse(response) {
     return response.json();
 }
 
-// Validate if userId exists
 function validateUserId(userId) {
     return fetch(todoEndpoint)
         .then(getResponse)
@@ -120,7 +119,6 @@ function validateUserId(userId) {
         });
 }
 
-// Validate if postId exists
 function validatePostId(postId) {
     return fetch(`${todoEndpoint}/${postId}`)
         .then(getResponse)
@@ -129,7 +127,6 @@ function validatePostId(postId) {
         });
 }
 
-// Get post content if userId and postId match
 function getPostContent(userId, postId) {
     return fetch(`${todoEndpoint}/${postId}`)
         .then(getResponse)
@@ -138,7 +135,6 @@ function getPostContent(userId, postId) {
         });
 }
 
-// Get all posts by userId
 function getAllPostContent(userId) {
     return fetch(todoEndpoint)
         .then(getResponse)
