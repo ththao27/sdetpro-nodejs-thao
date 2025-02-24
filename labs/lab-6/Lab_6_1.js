@@ -83,8 +83,6 @@ function app() {
     }
 }
 
-
-
 // Support functions
 function printMenuApp() {
     console.log(`
