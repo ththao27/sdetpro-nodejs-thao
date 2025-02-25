@@ -1,23 +1,24 @@
-const Post = require("./Post");
+const Post = require("./Post.js");
 
 class RequestHandler {
     constructor(baseUrl) {
         this._baseUrl = baseUrl;
     }
     
-    async printTargetPost(userId, postId) {
-        // Construct the returned data as a Post data model from class Post
+    async getTargetPost(userId, postId) {
         const posts = await this._getAllPosts();
         const targetPost = posts.find(post => post.userId === userId && post.id === postId);
-        console.log(targetPost || 'Post not found');
+        if (!targetPost) {
+            throw new Error("Post not found");
+        }
+        const {userId, title, id, body} = targetPost;
+        return new Post(userId, title, id, body);
     }
 
-    async printAllPosts(userId) {
-        // Construct the returned data as a [ Post data model ] from class Post
+    async getAllPostsByUserId(userId) {
         const posts = await this._getAllPosts();
         const userPosts = posts.filter(post => post.userId === userId);
-        console.log(userPosts);
-
+        return userPosts;
     }
 
     async fetchJson(endpoint) {
@@ -25,12 +26,10 @@ class RequestHandler {
         return response.json();
     }
 
-    async _getAllPosts(userId) {
+    async _getAllPosts() {
         const response = await fetch(`${this._baseUrl}/posts`);
         const allPosts = await response.json();
-        return allPosts.filter(function(post) {
-            return this.userId === userId;
-        })
+        return allPosts
     }
 }
 
