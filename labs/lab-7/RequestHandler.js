@@ -1,8 +1,9 @@
-const POST_ENDPOINT = 'https://jsonplaceholder.typicode.com/posts';
 const Post = require("./Post");
 
-
 class RequestHandler {
+    constructor(baseUrl) {
+        this._baseUrl = baseUrl;
+    }
     
     async printTargetPost(userId, postId) {
         // Construct the returned data as a Post data model from class Post
@@ -25,15 +26,11 @@ class RequestHandler {
     }
 
     async _getAllPosts(userId) {
-        try {
-            const response = await fetch(POST_ENDPOINT);
-            const allPosts = await response.json();
-            return allPosts.map(post => new Post(post.userId, post.id, post.title, post.body));
-        } catch (error) {
-            console.error('Error:', error);
-            return [];
-        }
-
+        const response = await fetch(`${this._baseUrl}/posts`);
+        const allPosts = await response.json();
+        return allPosts.filter(function(post) {
+            return this.userId === userId;
+        })
     }
 }
 

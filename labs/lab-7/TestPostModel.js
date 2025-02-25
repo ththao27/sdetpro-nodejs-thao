@@ -9,9 +9,9 @@ async function lab11(){
     // Given params
     const userId = 1;
     const postId = 1;
+    const baseUrl = "https://jsonplaceholder.typicode.com";
 
-    // Create RequestHandler object
-    const requestHandler = new RequestHandler();
+    const requestHandler = new RequestHandler(baseUrl);
 
     console.log("Fetching target post...");
     await requestHandler.printTargetPost(userId, postId);
