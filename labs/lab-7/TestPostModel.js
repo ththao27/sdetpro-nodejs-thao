@@ -21,11 +21,7 @@ async function main() {
                 let userId = getUserId();
                 let postId = getPostId();
                 const targetPost = await postEndpoint.getTargetPost(userId, postId);
-                if (targetPost) {
-                    console.log('Target Post:', targetPost);
-                } else {
-                    console.log('Post not found');
-                }
+                console.log('\n Target Post:', JSON.stringify(targetPost, null, 2));
                 break;
             }
             case 2: {

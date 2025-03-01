@@ -5,9 +5,9 @@ class RequestHandler {
         this._baseUrl = baseUrl;
     }
     
-    async getTargetPost(userId, postId) {
+    async getTargetPost(userIdInput, postId) {
         const posts = await this._getAllPosts();
-        const targetPost = posts.find(post => post.userId === userId && post.id === postId);
+        const targetPost = posts.find(post => post.userId === userIdInput && post.id === postId);
         if (!targetPost) {
             throw new Error("Post not found");
         }
@@ -19,11 +19,6 @@ class RequestHandler {
         const posts = await this._getAllPosts();
         const userPosts = posts.filter(post => post.userId === userId);
         return userPosts;
-    }
-
-    async fetchJson(endpoint) {
-        const response = await fetch(url);
-        return response.json();
     }
 
     async _getAllPosts() {
