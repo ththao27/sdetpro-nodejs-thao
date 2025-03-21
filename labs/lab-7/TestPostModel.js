@@ -1,5 +1,5 @@
 const readline = require('readline-sync');
-const RequestHandler = require("./RequestHandler");
+const RequestHandler = require("./RequestHandler.js");
 
 // Execution
 main();
@@ -21,14 +21,16 @@ async function main() {
                 let userId = getUserId();
                 let postId = getPostId();
                 const targetPost = await postEndpoint.getTargetPost(userId, postId);
-                console.log('\n Target Post:', JSON.stringify(targetPost, null, 2));
+                console.log('\n Target Post:', targetPost.toString());;
                 break;
             }
             case 2: {
                 let userId = getUserId();
-                const userPosts = await postEndpoint.getAllPostsByUserId(userId);
+                const userPosts = await postEndpoint.getAllPostsFromUser(userId);
                 if (userPosts.length > 0) {
-                    console.log('User Posts:', userPosts);
+                    for (const post of userPosts) {
+                        console.log(post.toString());
+                    }
                 } else {
                     console.log('No posts found for the user');
                 }
