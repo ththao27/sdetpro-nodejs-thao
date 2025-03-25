@@ -25,5 +25,5 @@ When an animal was born, it will have a random speed with below info
 - speed
 
 ## Racing 
-- getMaxSpeed
+- getWinner()
 
