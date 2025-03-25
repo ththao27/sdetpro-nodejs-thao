@@ -11,6 +11,26 @@ var EmployeeController = /** @class */ (function () {
         }
         return totalSalary;
     };
+    EmployeeController.getHighestSalaryEmployee = function (employeeList) {
+        var highestSalaryEmployee = employeeList[0];
+        for (var _i = 0, employeeList_2 = employeeList; _i < employeeList_2.length; _i++) {
+            var employee = employeeList_2[_i];
+            if (employee.getSalary() > highestSalaryEmployee.getSalary()) {
+                highestSalaryEmployee = employee;
+            }
+        }
+        return highestSalaryEmployee;
+    };
+    EmployeeController.getLowestSalaryEmployee = function (employeeList) {
+        var lowestSalaryEmployee = employeeList[0];
+        for (var _i = 0, employeeList_3 = employeeList; _i < employeeList_3.length; _i++) {
+            var employee = employeeList_3[_i];
+            if (employee.getSalary() < lowestSalaryEmployee.getSalary()) {
+                lowestSalaryEmployee = employee;
+            }
+        }
+        return lowestSalaryEmployee;
+    };
     return EmployeeController;
 }());
 exports.default = EmployeeController;

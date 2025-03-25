@@ -1,7 +1,7 @@
 export default abstract class Employee {
 
     protected name: string;
-    protected basicSalary: number = 30000;
+    protected basicSalary: number = 0;
     protected salary: number = 0;
 
     constructor(name: string) {

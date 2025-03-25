@@ -3,6 +3,7 @@ export default class FullTimeEmployee extends Employee {
 
     constructor(name: string) {
         super(name);
+        this.basicSalary = 30000;
         this.salary = this.getMaxSalary(40000);
     }
 

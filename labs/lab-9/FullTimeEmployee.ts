@@ -3,6 +3,7 @@ export default class ContractEmployee extends Employee {
     
     constructor(name: string) {
         super(name);
+        this.basicSalary = 40000;
         this.salary = this.getMaxSalary(50000);
     }
 

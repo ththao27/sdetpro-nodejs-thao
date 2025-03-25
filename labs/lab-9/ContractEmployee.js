@@ -20,6 +20,7 @@ var FullTimeEmployee = /** @class */ (function (_super) {
     __extends(FullTimeEmployee, _super);
     function FullTimeEmployee(name) {
         var _this = _super.call(this, name) || this;
+        _this.basicSalary = 30000;
         _this.salary = _this.getMaxSalary(40000);
         return _this;
     }

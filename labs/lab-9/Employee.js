@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var Employee = /** @class */ (function () {
     function Employee(name) {
-        this.basicSalary = 30000;
+        this.basicSalary = 0;
         this.salary = 0;
         this.name = name;
     }

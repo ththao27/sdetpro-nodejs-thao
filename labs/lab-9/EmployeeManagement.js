@@ -13,4 +13,8 @@ function main() {
     employeeList.push(new FullTimeEmployee_1.default("E"));
     var totalSalary = EmployeeController_1.default.getTotalSalary(employeeList);
     console.log("Total Salary: ".concat(totalSalary));
+    var highestSalaryEmployee = EmployeeController_1.default.getHighestSalaryEmployee(employeeList);
+    console.log("Highest Salary Employee: ".concat(highestSalaryEmployee.getName(), " with Salary: ").concat(highestSalaryEmployee.getSalary()));
+    var lowestSalaryEmployee = EmployeeController_1.default.getLowestSalaryEmployee(employeeList);
+    console.log("Lowest Salary Employee: ".concat(lowestSalaryEmployee.getName(), " with Salary: ").concat(lowestSalaryEmployee.getSalary()));
 }

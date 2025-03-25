@@ -14,4 +14,10 @@ function main() {
 
     const  totalSalary = EmployeeController.getTotalSalary(employeeList);
     console.log(`Total Salary: ${totalSalary}`);
+
+    const highestSalaryEmployee = EmployeeController.getHighestSalaryEmployee(employeeList);
+    console.log(`Highest Salary Employee: ${highestSalaryEmployee.getName()} with Salary: ${highestSalaryEmployee.getSalary()}`);
+
+    const lowestSalaryEmployee = EmployeeController.getLowestSalaryEmployee(employeeList);
+    console.log(`Lowest Salary Employee: ${lowestSalaryEmployee.getName()} with Salary: ${lowestSalaryEmployee.getSalary()}`);
 }

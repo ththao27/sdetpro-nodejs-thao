@@ -11,4 +11,26 @@ export default class EmployeeController {
         }
         return totalSalary;
     }
+
+    static getHighestSalaryEmployee(employeeList: Employee[]): Employee {
+
+        let highestSalaryEmployee: Employee = employeeList[0];
+        for (const employee of employeeList) {
+            if (employee.getSalary() > highestSalaryEmployee.getSalary()) {
+                highestSalaryEmployee = employee;
+            }
+        }
+        return highestSalaryEmployee;
+    }
+
+    static getLowestSalaryEmployee(employeeList: Employee[]): Employee {
+        
+        let lowestSalaryEmployee: Employee = employeeList[0];
+        for (const employee of employeeList) {
+            if (employee.getSalary() < lowestSalaryEmployee.getSalary()) {
+                lowestSalaryEmployee = employee;
+            }
+        }
+        return lowestSalaryEmployee;
+    }
 }
