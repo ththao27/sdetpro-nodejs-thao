@@ -4,8 +4,9 @@ export default abstract class Employee {
     protected basicSalary: number = 0;
     protected salary: number = 0;
 
-    constructor(name: string) {
+    constructor(name: string, basicSalary: number) {
         this.name = name;
+        this.basicSalary = basicSalary;
     }
 
     getName(): string {

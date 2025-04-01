@@ -19,8 +19,7 @@ var Employee_1 = require("./Employee");
 var ContractEmployee = /** @class */ (function (_super) {
     __extends(ContractEmployee, _super);
     function ContractEmployee(name) {
-        var _this = _super.call(this, name) || this;
-        _this.basicSalary = 40000;
+        var _this = _super.call(this, name, 40000) || this;
         _this.salary = _this.getMaxSalary(50000);
         return _this;
     }
