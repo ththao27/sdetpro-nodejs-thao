@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Animal = /** @class */ (function () {
-    function Animal(name, maxSpeed) {
+    function Animal(name, speed) {
         this.name = name;
-        this.speed = this.run(maxSpeed);
+        this.speed = speed;
     }
     Animal.prototype.getName = function () {
         return this.name;
@@ -11,7 +11,7 @@ var Animal = /** @class */ (function () {
     Animal.prototype.getSpeed = function () {
         return this.speed;
     };
-    Animal.prototype.run = function (maxSpeed) {
+    Animal.generateRandomSpeed = function (maxSpeed) {
         return (Math.floor(Math.random() * maxSpeed) + 1);
     };
     return Animal;

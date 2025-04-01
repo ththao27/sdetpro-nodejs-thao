@@ -3,9 +3,9 @@ export default class Animal {
     protected name: string;
     protected speed: number;
 
-    constructor(name: string, maxSpeed: number) {
+    constructor(name: string, speed: number) {
         this.name = name;
-        this.speed = this.run(maxSpeed);
+        this.speed = speed;
     }
 
     public getName(): string {
@@ -15,8 +15,8 @@ export default class Animal {
         return this.speed;
     }
 
-    private run(maxSpeed: number): number {
-        return  (Math.floor(Math.random() * maxSpeed) + 1);
+    static generateRandomSpeed(maxSpeed: number): number {
+        return (Math.floor(Math.random() * maxSpeed) + 1);
     }
 }
 

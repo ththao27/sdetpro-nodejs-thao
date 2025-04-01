@@ -4,9 +4,9 @@ import Tiger from "./Tiger";
 
 main();
 function main() {
-    const horse = new Horse("Horse", 100);
-    const dog = new Dog("Dog", 100);
-    const tiger = new Tiger("Tiger", 100);
+    const horse = new Horse("Horse");
+    const dog = new Dog("Dog");
+    const tiger = new Tiger("Tiger");
     const runningAnimal = [horse, dog, tiger];
     
     const winner = runningAnimal.reduce((a, b) => a.getSpeed() > b.getSpeed() ? a : b);

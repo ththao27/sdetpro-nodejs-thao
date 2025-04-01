@@ -18,8 +18,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Animal_1 = require("./Animal");
 var Dog = /** @class */ (function (_super) {
     __extends(Dog, _super);
-    function Dog(name, speed) {
-        return _super.call(this, name, speed) || this;
+    function Dog(name) {
+        return _super.call(this, name, Animal_1.default.generateRandomSpeed(60)) || this;
     }
     return Dog;
 }(Animal_1.default));
