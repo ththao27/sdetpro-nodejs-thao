@@ -1,8 +1,9 @@
 // Parent class / Super class / Base class
 
 class Request {
-    constructor( url, header = {}) {
-        this.url = url;
+
+    constructor(url, header = {}) {
+        this._url = url;
         this.header = header;
         this.method = '';
     }
@@ -17,6 +18,10 @@ class Request {
 
     verifyResponse(){
         console.log(`Verify response ...`);
+    }
+
+    static doSomething() { // không thể xảy ra overriding
+        console.log("This is a class method");
     }
 }
 
