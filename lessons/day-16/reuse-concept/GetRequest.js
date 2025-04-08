@@ -13,6 +13,7 @@ class GetRequest extends Request {
     }
 
     myNewMethod() { // method là hàm định nghĩa trong class -> chỉ xuất hiện khi và chỉ khi object được tạo ra
+        // class function không thể overriding được, của class nào class đó xài
         console.log("This is a new method");
     }
 

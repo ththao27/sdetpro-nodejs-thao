@@ -1,19 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Animal = /** @class */ (function () {
-    function Animal(name, speed) {
+class Animal {
+    constructor(name, speed) {
         this.name = name;
         this.speed = speed;
     }
-    Animal.prototype.getName = function () {
+    getName() {
         return this.name;
-    };
-    Animal.prototype.getSpeed = function () {
+    }
+    getSpeed() {
         return this.speed;
-    };
-    Animal.generateRandomSpeed = function (maxSpeed) {
+    }
+    static generateRandomSpeed(maxSpeed) {
         return (Math.floor(Math.random() * maxSpeed) + 1);
-    };
-    return Animal;
-}());
+    }
+}
 exports.default = Animal;

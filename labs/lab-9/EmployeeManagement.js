@@ -1,20 +1,23 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var ContractEmployee_1 = require("./ContractEmployee");
-var FullTimeEmployee_1 = require("./FullTimeEmployee");
-var EmployeeController_1 = require("./EmployeeController");
+const ContractEmployee_1 = __importDefault(require("./ContractEmployee"));
+const FullTimeEmployee_1 = __importDefault(require("./FullTimeEmployee"));
+const EmployeeController_1 = __importDefault(require("./EmployeeController"));
 main();
 function main() {
-    var employeeList = [];
+    const employeeList = [];
     employeeList.push(new ContractEmployee_1.default("A"));
     employeeList.push(new ContractEmployee_1.default("B"));
     employeeList.push(new ContractEmployee_1.default("C"));
     employeeList.push(new FullTimeEmployee_1.default("D"));
     employeeList.push(new FullTimeEmployee_1.default("E"));
-    var totalSalary = EmployeeController_1.default.getTotalSalary(employeeList);
-    console.log("Total Salary: ".concat(totalSalary));
-    var highestSalaryEmployee = EmployeeController_1.default.getHighestSalaryEmployee(employeeList);
-    console.log("Highest Salary Employee: ".concat(highestSalaryEmployee.getName(), " with Salary: ").concat(highestSalaryEmployee.getSalary()));
-    var lowestSalaryEmployee = EmployeeController_1.default.getLowestSalaryEmployee(employeeList);
-    console.log("Lowest Salary Employee: ".concat(lowestSalaryEmployee.getName(), " with Salary: ").concat(lowestSalaryEmployee.getSalary()));
+    const totalSalary = EmployeeController_1.default.getTotalSalary(employeeList);
+    console.log(`Total Salary: ${totalSalary}`);
+    const highestSalaryEmployee = EmployeeController_1.default.getHighestSalaryEmployee(employeeList);
+    console.log(`Highest Salary Employee: ${highestSalaryEmployee.getName()} with Salary: ${highestSalaryEmployee.getSalary()}`);
+    const lowestSalaryEmployee = EmployeeController_1.default.getLowestSalaryEmployee(employeeList);
+    console.log(`Lowest Salary Employee: ${lowestSalaryEmployee.getName()} with Salary: ${lowestSalaryEmployee.getSalary()}`);
 }

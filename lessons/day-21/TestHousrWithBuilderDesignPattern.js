@@ -1,3 +1,4 @@
+"use strict";
 /*
 import House from "./HouseWithBuilderDesignPattern";
 
@@ -10,4 +11,4 @@ let house: House = builder
                         .setColor("White")
                         .build();
 
-                        */
+                        */ 

@@ -1,3 +1,4 @@
+"use strict";
 /*
 // Outer Class
 export default class HouseWithBuilderDesignPattern {
@@ -61,4 +62,4 @@ export default class HouseWithBuilderDesignPattern {
 
 }
 
-*/
+*/ 
