@@ -13,8 +13,8 @@ console.log(`Total result: ${result + 1}`);
 // Forward slash
 result = 5 / 2;
 console.log(`5/2: ${result}`);
-console.log(`4/2: ${4/2}`);
-console.log(`10/3: ${10/3}`);
+console.log(`4/2: ${4 / 2}`);
+console.log(`10/3: ${10 / 3}`);
 
 // Rounding
 let roundingNearest = Math.round(9 / 2);

@@ -1,12 +1,11 @@
-import Employee from "./Employee";
+import Employee from './Employee';
 export default class ContractEmployee extends Employee {
-    
-    constructor(name: string) {
-        super(name, 40000);
-        this.salary = this.getMaxSalary(50000);
-    }
+  constructor(name: string) {
+    super(name, 40000);
+    this.salary = this.getMaxSalary(50000);
+  }
 
-    getMaxSalary(maxSalary: number): number {
-        return (Math.floor(Math.random() * (maxSalary - this.basicSalary + 1)) + this.basicSalary);
-    }
+  getMaxSalary(maxSalary: number): number {
+    return Math.floor(Math.random() * (maxSalary - this.basicSalary + 1)) + this.basicSalary;
+  }
 }

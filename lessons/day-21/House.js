@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 // Require: Immutable Object -> tạo ra thì không được thay đổi nữa
 /*
 export default class House {
@@ -35,4 +35,4 @@ export default class House {
 let teoHouse = new House("Red", 10, "White", 1);
 let tiHouse = new House("Blue", 15, "Black", 2);
 
-*/ 
+*/

@@ -10,12 +10,12 @@ let intArr = [1, 2, 3, 4, 5];
 let evenNumbers = 0;
 let oddNumbers = 0;
 
-for (let i = 0; i < intArr.length; i++){
-    if (UtilMethods.isEvenNumber(intArr[i])) {
-        evenNumbers++;
-    } else {
-        oddNumbers++;
-    }
+for (let i = 0; i < intArr.length; i++) {
+  if (UtilMethods.isEvenNumber(intArr[i])) {
+    evenNumbers++;
+  } else {
+    oddNumbers++;
+  }
 }
 
 console.log(`Even numbers: ${evenNumbers}`);

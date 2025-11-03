@@ -1,49 +1,49 @@
 export default class Book {
-    ISBN: number;
-    title: string;
-    author: string;
-    year: number;
+  ISBN: number;
+  title: string;
+  author: string;
+  year: number;
 
-    constructor(ISBN: number, title: string, author: string, year: number) {
-        this.ISBN = ISBN;
-        this.title = title;
-        this.author = author;
-        this.year = year;
-    }
+  constructor(ISBN: number, title: string, author: string, year: number) {
+    this.ISBN = ISBN;
+    this.title = title;
+    this.author = author;
+    this.year = year;
+  }
 
-    getBookInfo(): string {
-        return `ISBN: ${this.ISBN}, Title: ${this.title}, Author: ${this.author}, Year: ${this.year}`;
-    }
+  getBookInfo(): string {
+    return `ISBN: ${this.ISBN}, Title: ${this.title}, Author: ${this.author}, Year: ${this.year}`;
+  }
 
-    getISBN(): number {
-        return this.ISBN;
-    }
+  getISBN(): number {
+    return this.ISBN;
+  }
 
-    getTitle(): string {
-        return this.title;
-    }
+  getTitle(): string {
+    return this.title;
+  }
 
-    getAuthor(): string {
-        return this.author;
-    }
+  getAuthor(): string {
+    return this.author;
+  }
 
-    getYear(): number {
-        return this.year;
-    }
+  getYear(): number {
+    return this.year;
+  }
 
-    setISBN(ISBN: number): void {
-        this.ISBN = ISBN;
-    }
+  setISBN(ISBN: number): void {
+    this.ISBN = ISBN;
+  }
 
-    setTitle(title: string): void {
-        this.title = title;
-    }
+  setTitle(title: string): void {
+    this.title = title;
+  }
 
-    setAuthor(author: string): void {
-        this.author = author;
-    }
+  setAuthor(author: string): void {
+    this.author = author;
+  }
 
-    setYear(year: number): void {
-        this.year = year;
-    }
+  setYear(year: number): void {
+    this.year = year;
+  }
 }

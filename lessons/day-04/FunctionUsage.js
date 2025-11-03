@@ -1,4 +1,4 @@
 //const UtilMethods = require('./UtilMethods.js');
 
 //Destructure
-const {isEvenNumber} = require('./UtilMethods.js');
+const { isEvenNumber } = require('./UtilMethods.js');

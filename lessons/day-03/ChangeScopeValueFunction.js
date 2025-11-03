@@ -3,7 +3,6 @@ let returnedValue = changeToBeChanged();
 
 console.log(returnedValue);
 
-
 function changeToBeChanged() {
-    toBeChanged++;
+  toBeChanged++;
 }

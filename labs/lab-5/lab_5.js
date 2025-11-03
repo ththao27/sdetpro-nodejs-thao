@@ -25,20 +25,20 @@ printCountWords(countWord(individualWords));
 // Support functions
 
 function getString() {
-    return readline.question('Please enter a sentence: ');
+  return readline.question('Please enter a sentence: ');
 }
 
 function countWord(words) {
-    let countWords = {};
-    for (let word of words) {
-        countWords[word] = (countWords[word] ?? 0) + 1;
-    }
-    return countWords;
+  let countWords = {};
+  for (let word of words) {
+    countWords[word] = (countWords[word] ?? 0) + 1;
+  }
+  return countWords;
 }
 
 function printCountWords(countWords) {
-    console.log('Count words: ');
-    for (let word in countWords) {
-        console.log(`* ${word}: ${countWords[word]}`);
-    }
+  console.log('Count words: ');
+  for (let word in countWords) {
+    console.log(`* ${word}: ${countWords[word]}`);
+  }
 }
