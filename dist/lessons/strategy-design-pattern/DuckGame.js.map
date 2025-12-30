@@ -1,0 +1,1 @@
+{"version":3,"file":"DuckGame.js","sourceRoot":"","sources":["../../../lessons/strategy-design-pattern/DuckGame.ts"],"names":[],"mappings":";;;;;AAAA,0DAAkC;AAElC,sEAA8C;AAC9C,gEAAwC;AACxC,oDAA4B;AAE5B,IAAI,QAAQ,GAAS,IAAI,kBAAQ,EAAE,CAAC;AACpC,IAAI,WAAW,GAAS,IAAI,qBAAW,EAAE,CAAC;AAE1C,QAAQ,CAAC,gBAAgB,CAAC,IAAI,eAAK,EAAE,CAAC,CAAC;AAEvC,wBAAc,CAAC,YAAY,CAAC,QAAQ,CAAC,CAAC"}
